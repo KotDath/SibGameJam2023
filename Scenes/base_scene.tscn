@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://cf8tobs682qb0"]
+
+[ext_resource type="Texture2D" uid="uid://d0xuwn0krccgt" path="res://Tiles/metric_tile.tres" id="1_b7rbq"]
+[ext_resource type="PackedScene" uid="uid://cmxsehsei3pai" path="res://Characters/Player/Player.tscn" id="1_dl48n"]
+[ext_resource type="Script" path="res://UI/ProgressBar.gd" id="3_778ih"]
+[ext_resource type="Script" path="res://Scripts/Life/life.gd" id="3_hjxqo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0apsf"]
+size = Vector2(1123, 203)
+
+[node name="BaseScene" type="Node2D"]
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_dl48n")]
+position = Vector2(141, 258)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+freeze = true
+
+[node name="MetricTile" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(568, 466)
+scale = Vector2(5.6, 1)
+texture = ExtResource("1_b7rbq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(566.5, 466.5)
+shape = SubResource("RectangleShape2D_0apsf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("life")]
+offset_right = 1148.0
+offset_bottom = 27.0
+script = ExtResource("3_778ih")
+life = NodePath("../../Life")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+layout_direction = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Life" type="Node2D" parent="."]
+script = ExtResource("3_hjxqo")
+StartWill = 50.0
