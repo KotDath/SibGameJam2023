@@ -1,10 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ck2ql0lhx6frn"]
 
-[sub_resource type="Gradient" id="Gradient_dtec2"]
-colors = PackedColorArray(0, 0, 0, 0.392157, 0, 0, 0, 0.392157)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_1rvsf"]
-gradient = SubResource("Gradient_dtec2")
+[ext_resource type="Texture2D" uid="uid://bly1fkl3ot4g4" path="res://Assets/ui/thoughts-bg.png" id="1_bqluw"]
+[ext_resource type="FontFile" uid="uid://brum7yuj5fj8v" path="res://Assets/Fonts/AmazGoDa.ttf" id="2_6p1q7"]
 
 [node name="Thought" type="Control"]
 layout_mode = 3
@@ -14,32 +11,39 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(0, 400)
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = SubResource("GradientTexture1D_1rvsf")
+[node name="Thoughts-bg" type="Sprite2D" parent="."]
+position = Vector2(1579.15, 167)
+scale = Vector2(1.17518, 1.17518)
+texture = ExtResource("1_bqluw")
 
-[node name="Name" type="RichTextLabel" parent="TextureRect"]
+[node name="Name" type="RichTextLabel" parent="Thoughts-bg"]
 custom_minimum_size = Vector2(0, 50)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 50.0
+anchors_preset = -1
+anchor_left = 0.15
+anchor_top = -0.45
+anchor_right = 1.12074
+anchor_bottom = -0.45
+offset_left = -432.9
+offset_top = -5.7
+offset_right = -432.9
+offset_bottom = 44.3
 grow_horizontal = 2
+scale = Vector2(0.733, 1.123)
+theme_override_fonts/normal_font = ExtResource("2_6p1q7")
+theme_override_font_sizes/normal_font_size = 50
 fit_content = true
+metadata/_edit_use_anchors_ = true
 
-[node name="Content" type="RichTextLabel" parent="TextureRect"]
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 1
+[node name="Content" type="RichTextLabel" parent="Thoughts-bg"]
+custom_minimum_size = Vector2(0, 117.605)
 anchors_preset = 10
 anchor_right = 1.0
-offset_top = 100.0
-offset_bottom = 300.0
+offset_left = -309.87
+offset_top = -57.8633
+offset_right = -293.87
+offset_bottom = 60.1367
 grow_horizontal = 2
+scale = Vector2(0.733, 1.123)
+theme_override_fonts/normal_font = ExtResource("2_6p1q7")
+theme_override_font_sizes/normal_font_size = 15
+fit_content = true

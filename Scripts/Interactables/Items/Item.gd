@@ -19,6 +19,7 @@ var thought_system: ThoughtEngine
 func _ready():
 	thought_system = get_tree().get_first_node_in_group("Thought")
 	Will.HealthChanged.connect(_change_will)
+	_change_will()
 
 	interaction_area.interact = Callable(self, "_on_interact")
 
@@ -27,6 +28,7 @@ func _on_interact():
 	Will.decrease_life(DeltaWill)
 	TimerNode.increase_time(DeltaTime)
 	thought_system.draw_text(phrase_key)
+	
 	if is_once_activate:
 		queue_free()
 

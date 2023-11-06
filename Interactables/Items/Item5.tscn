@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://t3e4dee3xayn"]
+
+[ext_resource type="Script" path="res://Scripts/Interactables/Items/Item.gd" id="1_ng0rg"]
+[ext_resource type="Script" path="res://Scripts/Interactables/InteractionArea/interaction_area.gd" id="2_dxeyv"]
+[ext_resource type="Texture2D" uid="uid://8avbylm6fp05" path="res://Assets/interactions/bodies.png" id="3_0r1dx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cckpo"]
+size = Vector2(1200, 700)
+
+[node name="NegationItem" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ng0rg")
+SpawnWill = 20.0
+DeltaWill = 20.0
+DeltaTime = 60
+phrase_key = "deadbodies"
+is_once_activate = true
+
+[node name="interaction_area" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("2_dxeyv")
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+position = Vector2(0, 150)
+shape = SubResource("RectangleShape2D_cckpo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("3_0r1dx")

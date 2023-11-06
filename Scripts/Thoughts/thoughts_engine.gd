@@ -35,9 +35,11 @@ func draw_text(key: String):
 	var content = get_thoughts(key)
 	name_field.clear()
 	content_field.clear()
+	name_field.push_color(Color(content["color"]))
 	name_field.append_text(content["name"])
-	content_field.push_color(Color(content["color"]))
+	content_field.push_color(Color("123456"))
 	content_field.append_text(content["content"])
+	
 
 func _ready():
 	load_thoughts()

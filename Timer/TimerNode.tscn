@@ -5,6 +5,6 @@
 [node name="TimerNode" type="Node2D"]
 scale = Vector2(0.998081, 1)
 script = ExtResource("1_jh3bi")
-StartCountdown = 4
-StartTime = 4
-StartHour = 23
+StartCountdown = 24
+StartTime = 35
+StartHour = 9

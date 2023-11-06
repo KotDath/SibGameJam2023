@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dss2tt1qqcdhp"]
+
+[ext_resource type="Script" path="res://Scripts/Interactables/Items/Item.gd" id="1_eepaj"]
+[ext_resource type="Script" path="res://Scripts/Interactables/InteractionArea/interaction_area.gd" id="2_kcbdv"]
+[ext_resource type="Texture2D" uid="uid://c30ijtlc0lqlf" path="res://Assets/interactions/books.png" id="3_2c3o2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ih0d6"]
+radius = 200.0
+
+[node name="NegationItem" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_eepaj")
+SpawnWill = 50.0
+DespawnWill = 40.0
+DeltaWill = 2.0
+DeltaTime = 150
+phrase_key = "books"
+
+[node name="interaction_area" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("2_kcbdv")
+action_name = "sleep"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+shape = SubResource("CircleShape2D_ih0d6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_2c3o2")

@@ -26,6 +26,7 @@ func _physics_process(delta):
 
 
 func on_child_transition(state, new_state_name):
+	print(state, new_state_name, current_state)
 	if state != current_state:
 		return
 
@@ -35,8 +36,10 @@ func on_child_transition(state, new_state_name):
 		return
 	
 	if current_state:
+		print('Exit state: ', current_state)
 		current_state.Exit()
 
+	print('Enter state: ', new_state)
 	new_state.Enter()
 
 	current_state = new_state

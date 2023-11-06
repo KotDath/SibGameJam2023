@@ -20,11 +20,14 @@ func Physics_Update(_delta: float):
 			player.animated_sprite.set_flip_h(true)
 		player.velocity.y = 0
 	else:
+
 		player.velocity.x = move_toward(player.velocity.x, 0, player.Velocity)
 		Transitioned.emit(self, "idle")
+
+	if Input.is_action_pressed("interact") and InteractionManager.can_interact:
+		Transitioned.emit(self, "work")
 
 	player.move_and_slide()
 
 func Exit():
 	player.animated_sprite.stop()
-	player.animated_sprite.play("idle")

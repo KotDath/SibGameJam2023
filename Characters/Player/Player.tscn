@@ -1,53 +1,76 @@
-[gd_scene load_steps=80 format=3 uid="uid://cmxsehsei3pai"]
+[gd_scene load_steps=105 format=3 uid="uid://cmxsehsei3pai"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_5jhar"]
 [ext_resource type="Script" path="res://Scripts/Player/State Machine.gd" id="3_7epn8"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerIdle.gd" id="4_46cqi"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerRun.gd" id="5_4nysv"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerWork.gd" id="6_3vaih"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerClimb.gd" id="6_mc1wc"]
 [ext_resource type="Script" path="res://Characters/Player/flootChecker.gd" id="7_exqto"]
+[ext_resource type="Texture2D" uid="uid://c2ddv3ik8txsi" path="res://resources/animations/climb/Unga-Anim-climb_00.png" id="8_gfitt"]
 [ext_resource type="Texture2D" uid="uid://4xysigrcwosp" path="res://resources/animations/walk/Unga-Anim-walk_00.png" id="8_hqkhj"]
 [ext_resource type="Texture2D" uid="uid://6mndcngi4w7t" path="res://resources/animations/idle/Idle_00.png" id="8_v7van"]
 [ext_resource type="Script" path="res://Scripts/Interactables/ladder.gd" id="8_xiqcg"]
+[ext_resource type="Texture2D" uid="uid://baxvpogoc01ey" path="res://resources/animations/climb/Unga-Anim-climb_01.png" id="9_dibxh"]
 [ext_resource type="Texture2D" uid="uid://chjjsu3eqgv6c" path="res://resources/animations/walk/Unga-Anim-walk_01.png" id="9_hpha6"]
 [ext_resource type="Texture2D" uid="uid://bxsk1xh47bhju" path="res://resources/animations/idle/Idle_01.png" id="9_xfe3u"]
 [ext_resource type="Texture2D" uid="uid://d38y486qulmvd" path="res://resources/animations/walk/Unga-Anim-walk_02.png" id="10_7x3r7"]
+[ext_resource type="Texture2D" uid="uid://g3ms1fgkhpbf" path="res://resources/animations/climb/Unga-Anim-climb_02.png" id="10_jhbqg"]
 [ext_resource type="Texture2D" uid="uid://ce6ped37pe85k" path="res://resources/animations/idle/Idle_02.png" id="10_qqyq5"]
 [ext_resource type="Texture2D" uid="uid://bgqy2u12h5ejm" path="res://resources/animations/idle/Idle_03.png" id="11_0fqix"]
 [ext_resource type="Texture2D" uid="uid://c0mlbmuvse8tl" path="res://resources/animations/walk/Unga-Anim-walk_03.png" id="11_1185n"]
+[ext_resource type="Texture2D" uid="uid://n0g2gvehl4cp" path="res://resources/animations/climb/Unga-Anim-climb_03.png" id="11_oeeh0"]
 [ext_resource type="Texture2D" uid="uid://dtjuutg6uj6kx" path="res://resources/animations/idle/Idle_04.png" id="12_0bjny"]
 [ext_resource type="Texture2D" uid="uid://bg4gkijttfed7" path="res://resources/animations/walk/Unga-Anim-walk_04.png" id="12_dcn16"]
+[ext_resource type="Texture2D" uid="uid://c0rc3145wwaq5" path="res://resources/animations/climb/Unga-Anim-climb_04.png" id="12_t3gyp"]
 [ext_resource type="Texture2D" uid="uid://ckmvujf5s57vf" path="res://resources/animations/idle/Idle_05.png" id="13_5v47i"]
+[ext_resource type="Texture2D" uid="uid://biakwv4j6q1m1" path="res://resources/animations/climb/Unga-Anim-climb_05.png" id="13_ravau"]
 [ext_resource type="Texture2D" uid="uid://vt62kk2c3rf5" path="res://resources/animations/walk/Unga-Anim-walk_05.png" id="13_vkw7x"]
+[ext_resource type="Texture2D" uid="uid://djax4gy1q72tv" path="res://resources/animations/climb/Unga-Anim-climb_06.png" id="14_0ytjr"]
 [ext_resource type="Texture2D" uid="uid://ck3of7jqmiijn" path="res://resources/animations/idle/Idle_06.png" id="14_72xgy"]
 [ext_resource type="Texture2D" uid="uid://bjpdvurlokxt2" path="res://resources/animations/walk/Unga-Anim-walk_06.png" id="14_vl3be"]
 [ext_resource type="Texture2D" uid="uid://cpjnq7rhmihbx" path="res://resources/animations/walk/Unga-Anim-walk_07.png" id="15_a5bto"]
 [ext_resource type="Texture2D" uid="uid://cd6sscjcomc" path="res://resources/animations/idle/Idle_07.png" id="15_oovs5"]
+[ext_resource type="Texture2D" uid="uid://b8w0l8n5y3jbp" path="res://resources/animations/climb/Unga-Anim-climb_07.png" id="15_uca5t"]
+[ext_resource type="Texture2D" uid="uid://6d0h6jhaviwi" path="res://resources/animations/climb/Unga-Anim-climb_08.png" id="16_kbk5w"]
 [ext_resource type="Texture2D" uid="uid://d548frmk3lkk" path="res://resources/animations/walk/Unga-Anim-walk_08.png" id="16_mnq4y"]
 [ext_resource type="Texture2D" uid="uid://dsaqybbqxmwq1" path="res://resources/animations/idle/Idle_08.png" id="16_x7roc"]
 [ext_resource type="Texture2D" uid="uid://c7ycxsuhwrtw4" path="res://resources/animations/walk/Unga-Anim-walk_09.png" id="17_4fb10"]
 [ext_resource type="Texture2D" uid="uid://x01otjmnknw0" path="res://resources/animations/idle/Idle_09.png" id="17_ly6ya"]
+[ext_resource type="Texture2D" uid="uid://njg5nnlxttoe" path="res://resources/animations/climb/Unga-Anim-climb_09.png" id="17_mnsip"]
 [ext_resource type="Texture2D" uid="uid://jc1nai4brdpr" path="res://resources/animations/idle/Idle_10.png" id="18_6eary"]
 [ext_resource type="Texture2D" uid="uid://bvqxfof663sxs" path="res://resources/animations/walk/Unga-Anim-walk_10.png" id="18_88squ"]
+[ext_resource type="Texture2D" uid="uid://db253k437xbi5" path="res://resources/animations/climb/Unga-Anim-climb_10.png" id="18_ra3r2"]
+[ext_resource type="Texture2D" uid="uid://bptpc2wv507s5" path="res://resources/animations/climb/Unga-Anim-climb_11.png" id="19_cigiy"]
 [ext_resource type="Texture2D" uid="uid://dkv0yh6iw2ae6" path="res://resources/animations/walk/Unga-Anim-walk_11.png" id="19_jfsa6"]
 [ext_resource type="Texture2D" uid="uid://d3mim8niea1e7" path="res://resources/animations/idle/Idle_11.png" id="19_v2tke"]
 [ext_resource type="Texture2D" uid="uid://c1wo5exb6vxjv" path="res://resources/animations/idle/Idle_12.png" id="20_32qu8"]
 [ext_resource type="Texture2D" uid="uid://bxs0wy8wb8qym" path="res://resources/animations/walk/Unga-Anim-walk_12.png" id="20_clwrm"]
+[ext_resource type="Texture2D" uid="uid://bchybwavd48ss" path="res://resources/animations/climb/Unga-Anim-climb_12.png" id="20_q8ycw"]
 [ext_resource type="Texture2D" uid="uid://cyfrereupvamc" path="res://resources/animations/walk/Unga-Anim-walk_13.png" id="21_0ahbj"]
 [ext_resource type="Texture2D" uid="uid://cuj0pxs35kcsp" path="res://resources/animations/idle/Idle_13.png" id="21_hewxc"]
+[ext_resource type="Texture2D" uid="uid://cwkijn800rxw4" path="res://resources/animations/climb/Unga-Anim-climb_13.png" id="21_hm8d8"]
+[ext_resource type="Texture2D" uid="uid://biphne2vui1h1" path="res://resources/animations/climb/Unga-Anim-climb_14.png" id="22_0yght"]
 [ext_resource type="Texture2D" uid="uid://bakl2y7y7ixqg" path="res://resources/animations/idle/Idle_14.png" id="22_3q2b6"]
 [ext_resource type="Texture2D" uid="uid://ct8rkd0d1ql7d" path="res://resources/animations/walk/Unga-Anim-walk_14.png" id="22_4uy4a"]
 [ext_resource type="Texture2D" uid="uid://cmahlb2cjsmko" path="res://resources/animations/idle/Idle_15.png" id="23_6o1uj"]
 [ext_resource type="Texture2D" uid="uid://cx1g7mx85n56u" path="res://resources/animations/walk/Unga-Anim-walk_15.png" id="23_ftbrp"]
+[ext_resource type="Texture2D" uid="uid://ck8qim7a2hekh" path="res://resources/animations/climb/Unga-Anim-climb_15.png" id="23_m7des"]
 [ext_resource type="Texture2D" uid="uid://dpfvt6oo0mh4l" path="res://resources/animations/walk/Unga-Anim-walk_16.png" id="24_4u1ft"]
+[ext_resource type="Texture2D" uid="uid://dikeid2g7vqlq" path="res://resources/animations/climb/Unga-Anim-climb_16.png" id="24_b478w"]
 [ext_resource type="Texture2D" uid="uid://dab4f2uesbc8x" path="res://resources/animations/idle/Idle_16.png" id="24_mjn0x"]
 [ext_resource type="Texture2D" uid="uid://c8eeid6bomlo4" path="res://resources/animations/idle/Idle_17.png" id="25_b2yaw"]
 [ext_resource type="Texture2D" uid="uid://cmcdri4bnee35" path="res://resources/animations/walk/Unga-Anim-walk_17.png" id="25_eh21w"]
+[ext_resource type="Texture2D" uid="uid://b4rwddda5qvkp" path="res://resources/animations/climb/Unga-Anim-climb_17.png" id="25_muf5t"]
 [ext_resource type="Texture2D" uid="uid://d0swdputios6p" path="res://resources/animations/idle/Idle_18.png" id="26_iqrew"]
+[ext_resource type="Texture2D" uid="uid://by03g64g2ix1i" path="res://resources/animations/climb/Unga-Anim-climb_18.png" id="26_jsred"]
 [ext_resource type="Texture2D" uid="uid://0hjxbflrpugd" path="res://resources/animations/walk/Unga-Anim-walk_18.png" id="26_q6gyp"]
 [ext_resource type="Texture2D" uid="uid://qmwxjjcorwly" path="res://resources/animations/walk/Unga-Anim-walk_19.png" id="27_5rm8y"]
+[ext_resource type="Texture2D" uid="uid://fa4tteqxiytk" path="res://resources/animations/climb/Unga-Anim-climb_19.png" id="27_n18hx"]
 [ext_resource type="Texture2D" uid="uid://du1whalerhhg7" path="res://resources/animations/idle/Idle_19.png" id="27_upjpm"]
+[ext_resource type="Texture2D" uid="uid://cd0iiu782q0a1" path="res://resources/animations/climb/Unga-Anim-climb_20.png" id="28_bkfnq"]
 [ext_resource type="Texture2D" uid="uid://d4hpf2kq64w31" path="res://resources/animations/idle/Idle_20.png" id="28_f5iqn"]
+[ext_resource type="Texture2D" uid="uid://bbxp4ca21l66u" path="res://resources/animations/climb/Unga-Anim-climb_21.png" id="29_0bbkf"]
 [ext_resource type="Texture2D" uid="uid://0cnngo8hh4s0" path="res://resources/animations/idle/Idle_21.png" id="29_ee13o"]
 [ext_resource type="Texture2D" uid="uid://c5htlyhlaoacx" path="res://resources/animations/idle/Idle_22.png" id="30_4txts"]
 [ext_resource type="Texture2D" uid="uid://tlhyl53vm2fw" path="res://resources/animations/idle/Idle_23.png" id="31_xn6eh"]
@@ -74,6 +97,8 @@
 [ext_resource type="Texture2D" uid="uid://dri2aqm7bwg03" path="res://resources/animations/idle/Idle_44.png" id="52_2lsgv"]
 [ext_resource type="Texture2D" uid="uid://duldjkkt3ck5c" path="res://resources/animations/idle/Idle_45.png" id="53_axuhf"]
 [ext_resource type="Texture2D" uid="uid://ulab2y8aif1k" path="res://resources/animations/idle/Idle_46.png" id="54_ckd47"]
+[ext_resource type="Texture2D" uid="uid://dtjwqkgpfbjn1" path="res://resources/animations/work/0.png" id="97_bp8dl"]
+[ext_resource type="Texture2D" uid="uid://bqftmdptl8qim" path="res://resources/animations/work/1.png" id="98_ebg6s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v3g1"]
 size = Vector2(199, 196)
@@ -89,6 +114,77 @@ radius = 200.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4l86t"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_gfitt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dibxh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jhbqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_oeeh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t3gyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ravau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0ytjr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_uca5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_kbk5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mnsip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ra3r2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_cigiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_q8ycw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_hm8d8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_0yght")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_m7des")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_b478w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_muf5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_jsred")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_n18hx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_bkfnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_0bbkf")
+}],
+"loop": true,
+"name": &"climb",
+"speed": 24.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("8_v7van")
@@ -299,12 +395,24 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("97_bp8dl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_ebg6s")
+}],
+"loop": true,
+"name": &"work",
+"speed": 4.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_5jhar")
+LadderVelocity = 200.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(100, -100)
@@ -312,9 +420,9 @@ shape = SubResource("RectangleShape2D_2v3g1")
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_7epn8")
-initial_state = NodePath("Idle")
+initial_state = NodePath("idle")
 
-[node name="Idle" type="Node" parent="State Machine"]
+[node name="idle" type="Node" parent="State Machine"]
 script = ExtResource("4_46cqi")
 
 [node name="run" type="Node" parent="State Machine"]
@@ -322,6 +430,9 @@ script = ExtResource("5_4nysv")
 
 [node name="climb" type="Node" parent="State Machine"]
 script = ExtResource("6_mc1wc")
+
+[node name="work" type="Node" parent="State Machine"]
+script = ExtResource("6_3vaih")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("7_exqto")
@@ -340,6 +451,7 @@ shape = SubResource("RectangleShape2D_2gq45")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(100, -100)
+zoom = Vector2(0.5, 0.5)
 
 [node name="interactable" type="Area2D" parent="."]
 position = Vector2(100, -100)
@@ -353,5 +465,5 @@ shape = SubResource("CircleShape2D_ebaov")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(99, -180)
 sprite_frames = SubResource("SpriteFrames_4l86t")
-animation = &"idle"
-frame_progress = 0.684852
+animation = &"work"
+frame_progress = 0.0557961

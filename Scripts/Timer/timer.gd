@@ -14,10 +14,12 @@ var StartHour : int = 0
 
 var CurrentCountdown : int
 var CurrentTime : int
+var thought_system: ThoughtEngine
 
 var timer = null
 
 func _ready():
+	thought_system = get_tree().get_first_node_in_group("Thought")
 	CurrentTime = StartTime
 	CurrentCountdown = StartCountdown
 	StartHour += CurrentTime / 60
@@ -31,7 +33,7 @@ func _ready():
 	timer.start()
 	if CurrentCountdown <= 0:
 		timer.stop()
-		print('You win')
+		win()
 	TimeChanged.emit()
 
 func increase_time(time: int):
@@ -43,7 +45,7 @@ func increase_time(time: int):
 		CurrentTime = CurrentTime % 60
 	if CurrentCountdown <= 0:
 		timer.stop()
-		print('You win')
+		win()
 	TimeChanged.emit()
 
 
@@ -56,5 +58,8 @@ func _on_timer_timeout():
 		CurrentTime = CurrentTime % 60
 	if CurrentCountdown <= 0:
 		timer.stop()
-		print('You win') # экран победы
+		win()
 	TimeChanged.emit()
+
+func win():
+	thought_system.draw_text("end_game")

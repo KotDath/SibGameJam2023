@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6ny78gnuos13"]
+
+[ext_resource type="Script" path="res://Scripts/Interactables/Items/Item.gd" id="1_csata"]
+[ext_resource type="Script" path="res://Scripts/Interactables/InteractionArea/interaction_area.gd" id="2_cqp31"]
+[ext_resource type="Texture2D" uid="uid://hmxuyop6ur2w" path="res://Assets/interactions/cross1.png" id="3_qdr3r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r7ej"]
+size = Vector2(600, 1100)
+
+[node name="NegationItem" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_csata")
+SpawnWill = 100.0
+DespawnWill = 80.0
+DeltaWill = 3.0
+DeltaTime = 60
+phrase_key = "medbay"
+
+[node name="interaction_area" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("2_cqp31")
+action_name = ""
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+position = Vector2(0, 100)
+shape = SubResource("RectangleShape2D_1r7ej")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("3_qdr3r")

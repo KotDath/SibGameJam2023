@@ -17,9 +17,6 @@ var can_walk: bool = true
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
-func _ready():
-	animated_sprite.play("idle")
-	
 
 func on_ladder_checker_body_entered(body:Node2D):
 	print(str('down body entered: ', body.get_name()))
@@ -27,7 +24,7 @@ func on_ladder_checker_body_entered(body:Node2D):
 		can_climb = true
 		var ladder = (body.get_node("CollisionShape2D") as CollisionShape2D)
 		var rect = ladder.shape.get_rect()
-		LastLadder = Rect2(body.position + 2 * rect.position, rect.size)
+		LastLadder = Rect2(ladder.global_position - rect.size * 0.5, rect.size)
 
 func on_ladder_checker_body_exited(body:Node2D):
 	print(str('down body exited: ', body.get_name()))

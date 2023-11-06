@@ -5,6 +5,7 @@ var player: Player
 
 func Enter():
 	player = get_tree().get_first_node_in_group("Player")
+	player.animated_sprite.play("climb")
 	
 
 func Physics_Update(_delta: float):
@@ -27,3 +28,7 @@ func Physics_Update(_delta: float):
 		player.position.y = player.LastLadder.position.y + 1
 	if player.position.y > player.LastLadder.end.y:
 		player.position.y = player.LastLadder.end.y - 1
+
+func Exit():
+	player.animated_sprite.stop()
+	
