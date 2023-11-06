@@ -22,11 +22,8 @@ func Physics_Update(_delta: float):
 	else:
 		player.velocity.y = move_toward(player.velocity.x, 0, player.Velocity)
 		Transitioned.emit(self, "idle")
-
 	player.move_and_slide()
-
-	print(player.LastLadder)
-	if player.position.y < player.LastLadder.position.y:
+	if player.position.y <= player.LastLadder.position.y:
 		player.position.y = player.LastLadder.position.y + 1
 	if player.position.y > player.LastLadder.end.y:
 		player.position.y = player.LastLadder.end.y - 1

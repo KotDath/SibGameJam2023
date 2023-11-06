@@ -1,12 +1,9 @@
 extends ProgressBar
 
-@export var life : Life
-
 func _ready():
-	life.start()
-	life.HealthChanged.connect(update)
+	Will.start()
+	Will.HealthChanged.connect(update)
 	update()
 
 func update():
-	print(life.CurrentWill, life.MaxWill)
-	value = life.CurrentWill * 100 / life.MaxWill
+	value = Will.CurrentWill * 100 / Will.MaxWill

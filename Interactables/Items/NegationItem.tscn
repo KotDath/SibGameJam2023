@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://ll54tteqsho8"]
+
+[ext_resource type="Script" path="res://Scripts/Interactables/Items/Item.gd" id="1_iflpi"]
+[ext_resource type="Script" path="res://Scripts/Interactables/InteractionArea/interaction_area.gd" id="1_lf8ta"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ih0d6"]
+radius = 200.0
+
+[sub_resource type="Gradient" id="Gradient_7466d"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n5gqp"]
+gradient = SubResource("Gradient_7466d")
+
+[node name="NegationItem" type="Node2D"]
+script = ExtResource("1_iflpi")
+
+[node name="interaction_area" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_lf8ta")
+action_name = "sleep"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+shape = SubResource("CircleShape2D_ih0d6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_n5gqp")

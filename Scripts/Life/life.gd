@@ -17,9 +17,11 @@ func start():
 
 func increase_life(heal: float):
 	CurrentWill += heal
+	HealthChanged.emit()
 
 func decrease_life(damage: float):
 	CurrentWill -= damage
+	HealthChanged.emit()
 	if CurrentWill <= 0:
 		pass
 
@@ -27,7 +29,5 @@ func decrease_life(damage: float):
 func _process(delta):
 	if Input.is_action_pressed("shoot"):
 		decrease_life(0.1)
-		HealthChanged.emit()
 	if Input.is_action_pressed("heal"):
 		increase_life(0.1)
-		HealthChanged.emit()

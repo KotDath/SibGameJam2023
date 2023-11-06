@@ -1,0 +1,110 @@
+[gd_scene load_steps=11 format=3 uid="uid://cf8tobs682qb0"]
+
+[ext_resource type="Texture2D" uid="uid://d0xuwn0krccgt" path="res://Tiles/metric_tile.tres" id="1_b7rbq"]
+[ext_resource type="PackedScene" uid="uid://cmxsehsei3pai" path="res://Characters/Player/Player.tscn" id="1_dl48n"]
+[ext_resource type="Script" path="res://Scripts/TimeBar.gd" id="2_cavy0"]
+[ext_resource type="Script" path="res://UI/ProgressBar.gd" id="3_778ih"]
+[ext_resource type="Script" path="res://Scripts/Life/life.gd" id="3_hjxqo"]
+[ext_resource type="PackedScene" uid="uid://bhk6xe8nabge3" path="res://Interactables/LadderChecker.tscn" id="5_xcm25"]
+[ext_resource type="Script" path="res://Scripts/Thoughts/thoughts_engine.gd" id="6_d4m1n"]
+[ext_resource type="PackedScene" uid="uid://ck2ql0lhx6frn" path="res://UI/Thought.tscn" id="7_gjk34"]
+[ext_resource type="PackedScene" uid="uid://ll54tteqsho8" path="res://Interactables/Items/NegationItem.tscn" id="8_jqioh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0apsf"]
+size = Vector2(800, 2)
+
+[node name="BaseScene" type="Node2D"]
+position = Vector2(2, -2)
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_dl48n")]
+position = Vector2(0, 502)
+collision_layer = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("2_cavy0")
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+scale = Vector2(1.00331, 1)
+script = ExtResource("3_778ih")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+layout_direction = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasModulate" type="CanvasModulate" parent="CanvasLayer"]
+
+[node name="Thought" parent="CanvasLayer" instance=ExtResource("7_gjk34")]
+script = ExtResource("6_d4m1n")
+
+[node name="TimeLabel" type="Label" parent="CanvasLayer"]
+clip_contents = true
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 150.0
+offset_bottom = 173.0
+grow_horizontal = 0
+scale = Vector2(1, 0.971703)
+theme_override_font_sizes/font_size = 50
+
+[node name="CountDown" type="Label" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 350.0
+offset_bottom = 373.0
+grow_horizontal = 0
+scale = Vector2(1, 1.00491)
+theme_override_font_sizes/font_size = 50
+
+[node name="Life" type="Node2D" parent="."]
+script = ExtResource("3_hjxqo")
+StartWill = 50.0
+
+[node name="RigidBody2D2" type="Area2D" parent="."]
+position = Vector2(0, 202)
+scale = Vector2(1, 0.5)
+
+[node name="MetricTile" type="Sprite2D" parent="RigidBody2D2"]
+position = Vector2(400, -100)
+scale = Vector2(4, 1)
+texture = ExtResource("1_b7rbq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2(401, -200)
+shape = SubResource("RectangleShape2D_0apsf")
+
+[node name="LadderChecker" parent="." groups=["ladders"] instance=ExtResource("5_xcm25")]
+position = Vector2(700, 502)
+
+[node name="RigidBody2D3" type="Area2D" parent="."]
+position = Vector2(0, 602)
+scale = Vector2(1, 0.5)
+
+[node name="MetricTile" type="Sprite2D" parent="RigidBody2D3"]
+position = Vector2(400, -100)
+scale = Vector2(4, 1)
+texture = ExtResource("1_b7rbq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3"]
+position = Vector2(401, -200)
+shape = SubResource("RectangleShape2D_0apsf")
+
+[node name="NegationItem" parent="." groups=["interact"] instance=ExtResource("8_jqioh")]
+position = Vector2(600, 402)
+scale = Vector2(0.993457, 0.974853)
+SpawnWill = 80.0
+DespawnWill = 20.0
+DeltaWill = 12.0
+DeltaTime = 30
+is_once_activate = true
