@@ -10,6 +10,7 @@ func Physics_Update(_delta: float):
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		player.velocity.x = direction * player.Velocity
+		player.velocity.y = 0
 	else:
 		player.velocity.x = move_toward(player.velocity.x, 0, player.Velocity)
 		Transitioned.emit(self, "idle")

@@ -23,6 +23,7 @@ func decrease_life(damage: float):
 	if CurrentWill <= 0:
 		pass
 
+
 func _process(delta):
 	if Input.is_action_pressed("shoot"):
 		decrease_life(0.1)

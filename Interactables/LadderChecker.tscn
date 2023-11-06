@@ -4,6 +4,8 @@
 size = Vector2(50, 400)
 
 [node name="LadderChecker" type="Area2D"]
+scale = Vector2(1.00527, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(25, -200)
 shape = SubResource("RectangleShape2D_2jnl1")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmxsehsei3pai"]
+[gd_scene load_steps=13 format=3 uid="uid://cmxsehsei3pai"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Player.gd" id="1_5jhar"]
 [ext_resource type="Texture2D" uid="uid://d0xuwn0krccgt" path="res://Tiles/metric_tile.tres" id="1_44mea"]
@@ -6,21 +6,33 @@
 [ext_resource type="Script" path="res://Scripts/Player/PlayerIdle.gd" id="4_46cqi"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerRun.gd" id="5_4nysv"]
 [ext_resource type="Script" path="res://Scripts/Player/PlayerClimb.gd" id="6_mc1wc"]
+[ext_resource type="Script" path="res://Characters/Player/flootChecker.gd" id="7_exqto"]
+[ext_resource type="Script" path="res://Scripts/Interactables/ladder.gd" id="8_xiqcg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v3g1"]
-size = Vector2(200, 200)
+size = Vector2(199, 196)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agdwu"]
+size = Vector2(200, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gq45"]
+size = Vector2(200, 2.5)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ebaov"]
+radius = 200.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_5jhar")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(100, -100)
 shape = SubResource("RectangleShape2D_2v3g1")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 100.0
-offset_bottom = 100.0
+offset_top = -200.0
+offset_right = 200.0
 texture = ExtResource("1_44mea")
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -35,3 +47,27 @@ script = ExtResource("5_4nysv")
 
 [node name="climb" type="Node" parent="State Machine"]
 script = ExtResource("6_mc1wc")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("7_exqto")
+
+[node name="flootChecker" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(100, 0)
+shape = SubResource("RectangleShape2D_agdwu")
+
+[node name="up_ladder" type="Area2D" parent="."]
+position = Vector2(-1, -199)
+script = ExtResource("8_xiqcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="up_ladder"]
+position = Vector2(100, 199)
+shape = SubResource("RectangleShape2D_2gq45")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(100, -100)
+
+[node name="interactable" type="Area2D" parent="."]
+position = Vector2(100, -100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable"]
+shape = SubResource("CircleShape2D_ebaov")

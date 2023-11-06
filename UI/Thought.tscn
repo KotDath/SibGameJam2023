@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck2ql0lhx6frn"]
+
+[sub_resource type="Gradient" id="Gradient_dtec2"]
+colors = PackedColorArray(0, 0, 0, 0.392157, 0, 0, 0, 0.392157)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1rvsf"]
+gradient = SubResource("Gradient_dtec2")
+
+[node name="Thought" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture1D_1rvsf")
+
+[node name="Name" type="RichTextLabel" parent="TextureRect"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
+fit_content = true
+
+[node name="Content" type="RichTextLabel" parent="TextureRect"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 100.0
+offset_bottom = 300.0
+grow_horizontal = 2
